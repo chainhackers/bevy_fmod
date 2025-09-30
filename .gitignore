@@ -8,3 +8,4 @@ Cargo.lock
 assets/
 demo_project/
 target/
+tasks/
