@@ -1,5 +1,5 @@
 [dependencies]
-libfmod = { path = "../libfmod/libfmod" }
+libfmod = { git = "https://github.com/chainhackers/libfmod.git" }
 
 [dependencies.bevy]
 default-features = false
