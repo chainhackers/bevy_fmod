@@ -3,3 +3,7 @@ rustflags = [
     "-L", "native=./vendor",
     "-C", "link-arg=-Wl,-rpath,./vendor",
 ]
+
+[test]
+# FMOD tests must run serially - they share the audio device
+test-threads = 1
