@@ -9,3 +9,4 @@ assets/
 demo_project/
 target/
 tasks/
+tests/data/

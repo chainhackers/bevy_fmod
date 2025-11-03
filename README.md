@@ -180,6 +180,52 @@ project (
 `File > Build`). This will create a folder called
 `.\assets\audio\demo_project\Build` which is used by our examples.
 
+## Testing
+
+This crate includes a test suite that requires FMOD libraries and test bank files.
+
+### Quick Start
+
+The easiest way to run tests is using the provided helper scripts:
+
+```bash
+# First time setup - creates symlink to libfmod test banks
+./setup_tests.sh
+
+# Run tests
+./run_tests.sh
+```
+
+The `run_tests.sh` script automatically:
+- Verifies FMOD SDK is installed at the expected location
+- Checks that FMOD library files (`libfmod.so.14`, `libfmodstudio.so.14`) exist
+- Sets up library paths (`LD_LIBRARY_PATH`)
+- Runs tests with single-threaded execution (required by FMOD)
+
+### Requirements
+
+- **libfmod repository**: Tests require FMOD Studio bank files from the `libfmod` repository. This should be checked out in a sibling directory (`../libfmod`).
+- **FMOD SDK**: Download FMOD Engine 2.03.09 from [fmod.com](https://fmod.com/download#fmodengine) and extract to `../libfmod/fmodstudioapi20310linux` (or set `FMOD_SDK_DIR`).
+
+### Manual Testing
+
+If you prefer to run tests manually:
+
+```bash
+# Set FMOD SDK path
+export FMOD_SDK_DIR=/path/to/fmodstudioapi20310linux
+
+# Set runtime library path (Linux)
+export LD_LIBRARY_PATH=$FMOD_SDK_DIR/api/core/lib/x86_64:$FMOD_SDK_DIR/api/studio/lib/x86_64:$LD_LIBRARY_PATH
+
+# Run tests (must be single-threaded)
+cargo test -- --test-threads=1
+```
+
+> [!IMPORTANT]
+> Tests **must** run with `--test-threads=1` due to FMOD audio system constraints.
+> Multiple FMOD systems cannot be created simultaneously.
+
 ## About FMOD
 
 FMOD is a cross-platform audio engine that is

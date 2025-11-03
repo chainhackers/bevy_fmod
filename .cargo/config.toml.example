@@ -1,0 +1,22 @@
+# Example Cargo configuration for bevy_fmod
+# Copy this file to .cargo/config.toml and customize for your system
+
+[build]
+rustflags = [
+    # Set FMOD SDK library paths - adjust to your FMOD installation
+    # For x86_64 Linux:
+    "-L", "../libfmod/fmodstudioapi20310linux/api/core/lib/x86_64",
+    "-L", "../libfmod/fmodstudioapi20310linux/api/studio/lib/x86_64",
+
+    # For other architectures, replace x86_64 with:
+    # - arm64 (for aarch64/Apple Silicon)
+    # - arm (for 32-bit ARM)
+]
+
+# Alternative: Set FMOD_SDK_DIR environment variable instead
+# This is the preferred method if you don't want to modify config files
+#
+# export FMOD_SDK_DIR=/path/to/fmodstudioapi20310linux
+# cargo build
+#
+# The build.rs script will automatically detect and use this path.
