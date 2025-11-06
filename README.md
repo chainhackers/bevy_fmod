@@ -2,13 +2,13 @@
 
 [![bevy_fmod on crates.io](https://img.shields.io/crates/v/bevy_fmod)](https://crates.io/crates/bevy_fmod)
 [![Latest compatible Bevy version](https://img.shields.io/badge/Bevy-0.17-black)](https://crates.io/crates/bevy/0.17.0)
-[![Supported FMOD version](https://img.shields.io/badge/FMOD-2.02.22-black)](https://github.com/lebedec/libfmod?tab=readme-ov-file#installation)
+[![Supported FMOD version](https://img.shields.io/badge/FMOD-2.03.09-black)](https://github.com/lebedec/libfmod?tab=readme-ov-file#installation)
 
 This crate aims to provide an idiomatic [Bevy] plugin for FMOD. This crate
 wraps [`libfmod`][libfmod] and is therefore constrained to the same version of
 FMOD that it uses.
 
-Version `0.9.0` of this crate is compatible with Bevy `0.17` and FMOD `2.02.22`.
+Version `0.9.0` of this crate is compatible with Bevy `0.17` and FMOD `2.03.09`.
 
 > [!WARNING]
 >
@@ -28,7 +28,7 @@ You will need to download the appropriate libraries [here][FMOD libraries downlo
 This requires a free FMOD account.
 
 For maximum compatibility, we recommend to download the same version of FMOD
-that `libfmod` uses. The latest supported version is `2.02.22`.
+that `libfmod` uses. The latest supported version is `2.03.09`.
 
 The FMOD Studio download contains the FMOD Studio desktop application,
 which is mostly used by who do sound design for your game. To use this crate,
